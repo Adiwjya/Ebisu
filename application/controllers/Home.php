@@ -32,6 +32,14 @@ class Home extends CI_Controller{
     public function pengajar(){
         $this->load->view('front-end/login/pengajar');
     }
+
+    public function daftar_member(){
+        $this->load->view('front-end/daftar/member');
+    }
+
+    public function daftar_pengajar(){
+        $this->load->view('front-end/daftar/pengajar');
+    }
     
     public function logout(){
         $this->session->unset_userdata('logged_in');

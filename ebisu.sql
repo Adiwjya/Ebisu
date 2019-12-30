@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2019 at 03:47 PM
+-- Generation Time: Dec 30, 2019 at 06:55 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -61,6 +61,13 @@ CREATE TABLE `materi` (
   `deskripsi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `materi`
+--
+
+INSERT INTO `materi` (`id_materi`, `nama`, `deskripsi`) VALUES
+('MTR001', 'TIK', 'Teknologi Informasi dan Komunikasi');
+
 -- --------------------------------------------------------
 
 --
@@ -111,7 +118,9 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama`, `email`, `alamat`, `tlp`, `username`, `password`, `jenis_bidang`, `jenis_paket`) VALUES
-('PL0000', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', '-', '-');
+('PL0001', 'user1', 'user1@gmail.com', 'test', 'test', 'user1@gmail.com', '123', '-', 'PKT001'),
+('PL0002', 'user2', 'user2@gmail.com', 'test', 'test', 'user2@gmail.com', '123', '-', 'PKT002'),
+('PL0003', 'user3', 'user3', 'test', 'test', 'user3', '123', '-', 'PKT003');
 
 -- --------------------------------------------------------
 
@@ -129,6 +138,13 @@ CREATE TABLE `pengajar` (
   `password` varchar(20) NOT NULL,
   `id_materi` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pengajar`
+--
+
+INSERT INTO `pengajar` (`id_pengajar`, `nama`, `email`, `alamat`, `tlp`, `username`, `password`, `id_materi`) VALUES
+('PG0001', 'Adi Wijaya', 'pengajar1@gmail.com', 'Test', '0000', 'pengajar1@gmail.com', '123', 'MTR001');
 
 -- --------------------------------------------------------
 

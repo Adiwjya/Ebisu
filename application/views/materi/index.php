@@ -5,7 +5,7 @@
     
     $(document).ready(function() {
         table = $('#tb').DataTable( {
-            ajax: "<?php echo base_url(); ?>pelanggan/ajax_list"
+            ajax: "<?php echo base_url(); ?>materi/ajax_list"
         });
         
         $('.datepicker').datepicker({
@@ -25,7 +25,7 @@
         save_method = 'add';
         $('#form')[0].reset(); // reset form on modals
         $('#modal_form').modal('show'); // show bootstrap modal
-        $('.modal-title').text('Tambah pelanggan'); // Set Title to Bootstrap modal title
+        $('.modal-title').text('Tambah materi'); // Set Title to Bootstrap modal title
     }
     
     function save(){
@@ -34,9 +34,9 @@
         
         var url;
         if(save_method === 'add') {
-            url = "<?php echo base_url(); ?>pelanggan/ajax_add";
+            url = "<?php echo base_url(); ?>materi/ajax_add";
         } else {
-            url = "<?php echo base_url(); ?>pelanggan/ajax_edit";
+            url = "<?php echo base_url(); ?>materi/ajax_edit";
         }
         
         // ajax adding data to database
@@ -67,7 +67,7 @@
         if(confirm("Apakah anda yakin menghapus " + nama + " ?")){
             // ajax delete data to database
             $.ajax({
-                url : "<?php echo base_url(); ?>pelanggan/hapus/" + id,
+                url : "<?php echo base_url(); ?>materi/hapus/" + id,
                 type: "POST",
                 dataType: "JSON",
                 success: function(data){
@@ -84,20 +84,17 @@
         save_method = 'update';
         $('#form')[0].reset(); // reset form on modals
         $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-        $('.modal-title').text('Ganti pelanggan'); // Set title to Bootstrap modal title
+        $('.modal-title').text('Ganti materi'); // Set title to Bootstrap modal title
         
         //Ajax Load data from ajax
         $.ajax({
-            url : "<?php echo base_url(); ?>pelanggan/ganti/" + id,
+            url : "<?php echo base_url(); ?>materi/ganti/" + id,
             type: "GET",
             dataType: "JSON",
             success: function(data){
-                $('[name="id"]').val(data.id_pelanggan);
-                $('[name="nama_pelanggan"]').val(data.nama);
-                $('[name="email"]').val(data.email);
-                $('[name="alamat"]').val(data.alamat);
-                $('[name="tlp"]').val(data.tlp);
-                $('[name="password"]').val(data.password);
+                $('[name="id"]').val(data.id_materi);
+                $('[name="nama"]').val(data.nama);
+                $('[name="deskripsi"]').val(data.deskripsi);
             },
             error: function (jqXHR, textStatus, errorThrown){
                 alert('Error get data');
@@ -122,12 +119,12 @@
                 <div class="col-xl-12 col-lg-12 col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Master Pelanggan</h4>
+                            <h4 class="card-title">Master Materi</h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
                                 <div class="col-md-12 col-xs-12 col-sm-12">
-                                    <button class="btn btn-md btn-primary" onclick="add();"> Tambah Pelanggan</button>
+                                    <button class="btn btn-md btn-primary" onclick="add();"> Tambah Materi</button>
                                     <button class="btn btn-md btn-default" onclick="reload();"> Reload</button>
                                 </div>
                                 <div class="clearfix"></div><br>
@@ -137,11 +134,7 @@
                                             <tr>
                                                 <th>Id</th>
                                                 <th>Nama</th>
-                                                <th>email</th>
-                                                <th>alamat</th>
-                                                <th>Tlp</th> 
-                                                <th>username</th>
-                                                <th>password</th>
+                                                <th>Deskripsi</th>
                                                 <th style="text-align: center;">Aksi</th>
                                             </tr>
                                         </thead>
@@ -166,7 +159,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Form Pelanggan</h5>
+                <h5 class="modal-title">Form Materi</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -181,29 +174,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" style="text-align: right;">Email</label>
+                        <label class="col-sm-3 col-form-label" style="text-align: right;">Deskripsi</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="email" placeholder="Email">
+                            <input type="text" class="form-control" name="deskripsi" placeholder="Deskripsi">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" style="text-align: right;">Alamat</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="alamat" placeholder="Alamat">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" style="text-align: right;">Tlp</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="tlp" placeholder="No Telepon">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" style="text-align: right;">Password</label>
-                        <div class="col-sm-9">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
-                        </div>
-                    </div>     
+    
                 </form>
             </div>
             <div class="modal-footer">

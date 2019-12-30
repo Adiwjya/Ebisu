@@ -42,4 +42,44 @@ class Login extends CI_Controller{
         }
         echo json_encode(array("status" => $status));
     }
+
+    public function ajax_login_pelanggan() {
+        $email = $this->input->post('email');
+        $pass = $this->input->post('password');
+        $jml = $this->Mglobals->getAllQR("SELECT count(*) as jml FROM pelanggan where email = '".$email."' and password = '".$pass."';")->jml;
+        if($jml > 0){
+            // $data = $this->Mglobals->getAllQR("SELECT iduserconfig, nama, golongan FROM userconfig where iduserconfig = '".$email."' and pass = '".$pass."';");
+            $data = $this->Mglobals->getAllQR("SELECT email, nama FROM pelanggan where email = '".$email."' and password = '".$pass."';;");
+            $sess_array = array(
+                'email' => $data->email,
+                'akses' => "Member",
+                'nama' => $data->nama
+            );
+            $this->session->set_userdata('logged_in', $sess_array);
+            $status = "ok";
+        }else{
+            $status = "Maaf, anda tidak berhak mengakses";
+        }
+        echo json_encode(array("status" => $status));
+    }
+
+    public function ajax_login_pengajar() {
+        $email = $this->input->post('email');
+        $pass = $this->input->post('password');
+        $jml = $this->Mglobals->getAllQR("SELECT count(*) as jml FROM pengajar where email = '".$email."' and password = '".$pass."';")->jml;
+        if($jml > 0){
+            // $data = $this->Mglobals->getAllQR("SELECT iduserconfig, nama, golongan FROM userconfig where iduserconfig = '".$email."' and pass = '".$pass."';");
+            $data = $this->Mglobals->getAllQR("SELECT email, nama FROM pengajar where email = '".$email."' and password = '".$pass."';;");
+            $sess_array = array(
+                'email' => $data->email,
+                'akses' => "Pengajar",
+                'nama' => $data->nama
+            );
+            $this->session->set_userdata('logged_in', $sess_array);
+            $status = "ok";
+        }else{
+            $status = "Maaf, anda tidak berhak mengakses";
+        }
+        echo json_encode(array("status" => $status));
+    }
 }

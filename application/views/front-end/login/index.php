@@ -1,98 +1,68 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Ebisu | Log in</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ebisu | Log in</title>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>app-assets/plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>app-assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>app-assets/dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>app-assets/form/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>app-assets/form/css/style.css">
 </head>
+<body style=" overflow: hidden;">
 
-<body class="hold-transition login-page">
-  <div class="login-box">
-    <div class="login-logo">
-      <a href="<?php echo base_url(); ?>assets/index2.html"><b>Login</b>Page</a>
+    <div class="main" style="padding: 20px 0;">
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="<?php echo base_url(); ?>app-assets/form/images/signin-image.jpg" alt="sing up image"></figure>
+                        <a href="<?php echo base_url(); ?>home/daftar_member" class="signup-image-link" style="margin-top: 59px;">Belum Punya Akun? Daftar Sekarang</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign in Member</h2>
+                        <form id="form" method="post">
+                            <div class="form-group">
+                                <label ><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="email" id="email" name="email" placeholder="Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label ><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" id="password" name="password" placeholder="Password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="button" onclick="login();" id="btnLogin" class="form-submit" value="Log in" style="background:#6927ff;"/>
+                            </div>
+                        </form>
+
+                        <div class="social-login">
+                            <span class="social-label">Atau masuk sebagai</span>
+                            <ul class="socials">
+                                <li><a href="<?php echo base_url(); ?>home/pengajar"><i class="display-flex-center zmdi zmdi-facebook" style="width: 110px; content:none;">Pengajar</i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
-    <!-- /.login-logo -->
-    <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Masuk sebagai pelanggan</p>
 
-      <form action="../../index3.html" method="post">
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
+    <!-- JS -->
+    <script src="<?php echo base_url(); ?>app-assets/form/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>app-assets/form/js/main.js"></script>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="<?php echo base_url(); ?>home/pengajar" class="btn btn-block btn-primary" style="background:#6927ff; ">
-          Sign in sebagai pengajar
-        </a>
-      </div>
-      <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-        <a href="#">Lupa Password</a>
-      </p>
-      <p class="mb-0">
-        <a href="<?php echo base_url(); ?>home/daftar" class="text-center">Belum punya akun? Daftar disini</a>
-      </p>
-    </div>
-    <!-- /.login-card-body -->
-  </div>
-</div>
-<!-- /.login-box -->
-
-
-  <!-- jQuery -->
-  <script src="<?php echo base_url(); ?>app-assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="<?php echo base_url(); ?>app-assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="<?php echo base_url(); ?>app-assets/dist/js/adminlte.min.js"></script>
-
-  <script type="text/javascript">
+    <script type="text/javascript">
     function login() {
       // ajax adding data to database
       var email = document.getElementById('email').value;
@@ -106,12 +76,12 @@
         $('#btnLogin').attr('disabled', true); //set button disable
 
         $.ajax({
-          url: "<?php echo base_url(); ?>login/ajax_login",
+          url: "<?php echo base_url(); ?>login/ajax_login_pelanggan",
           type: "POST",
           data: $('#form').serialize(),
           dataType: "JSON",
           success: function(data) {
-            $('#btnLogin').text('LOGIN'); //change button text
+            $('#btnLogin').text('Masuk'); //change button text
             $('#btnLogin').attr('disabled', false); //set button disable
 
             if (data.status === 'ok') {
@@ -130,7 +100,5 @@
       }
     }
   </script>
-
-</body>
-
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
