@@ -49,7 +49,7 @@
                     </div>
                     <div class="signup-image">
                         <figure><img src="<?php echo base_url(); ?>app-assets/form/images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link" style="margin-top: 60px;">Belum Punya Akun? Daftar Sekarang</a>
+                        <a href="<?php echo base_url(); ?>home/daftar_pengajar" class="signup-image-link" style="margin-top: 60px;">Belum Punya Akun? Daftar Sekarang</a>
                     </div>
                 </div>
             </div>

@@ -85,7 +85,7 @@
             $('#btnLogin').attr('disabled', false); //set button disable
 
             if (data.status === 'ok') {
-              window.location.href = "<?php echo base_url(); ?>eb_admin";
+              window.location.href = "<?php echo base_url(); ?>home";
             } else {
               alert(data.status);
             }

@@ -38,10 +38,11 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="<?php echo base_url(); ?>home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="<?php echo base_url(); ?>home/kelas" class="nav-link">Kelas</a></li>
             <li class="nav-item"><a href="<?php echo base_url(); ?>home/paket" class="nav-link">Paket</a></li>
-	          <li class="nav-item"><a href="<?php echo base_url(); ?>home/about" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="<?php echo base_url(); ?>home/contact" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta"><a href="<?php echo base_url(); ?>home/login" class="nav-link"><span>Login</span></a></li>
+              <li class="nav-item"><a href="<?php echo base_url(); ?>home/contact" class="nav-link">Profile</a></li>
+              <li class="nav-item cta"><a href="#" class="nav-link"><span>Haloo! <?php echo $nama; ?></span></a></li>
+              <li class="nav-item cta"><a href="<?php echo base_url(); ?>home/logout" class="nav-link" style="background:red;border: unset;padding-left: 10px;padding-right: 10px;margin-left: 15px;"><span>Logout</span></a></li>
 	        </ul>
 	      </div>
 	    </div>

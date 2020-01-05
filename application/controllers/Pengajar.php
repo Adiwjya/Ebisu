@@ -92,6 +92,32 @@ class Pengajar extends CI_Controller{
             $this->modul->halaman('login');
         }
     }
+
+    public function ajax_add_r() {
+            $cek = $this->Mglobals->getAllQR("select count(*) as jml from pengajar where nama = '".$this->input->post('nama')."';")->jml;
+            if($cek > 0){
+                $status = "Data sudah ada";
+            }else{
+                $data = array(
+                    'id_pengajar' => $this->modul->autokode1('PG','id_pengajar','pengajar','3','7'),
+                    'nama' => $this->input->post('nama'),
+                    'email' => $this->input->post('email'),
+                    'tlp' => $this->input->post('tlp'),
+                    'alamat' => $this->input->post('alamat'),
+                    'username' => $this->input->post('email'),
+                    'password' => $this->input->post('password'),
+                    'id_materi' => $this->input->post('paket')
+   
+                );
+                $simpan = $this->Mglobals->add("pengajar",$data);
+                if($simpan == 1){
+                    $status = "Data tersimpan";
+                }else{
+                    $status = "Data gagal tersimpan";
+                }
+            }
+            echo json_encode(array("status" => $status));
+    }
     
     public function ganti(){
         if($this->session->userdata('logged_in')){

@@ -36,12 +36,11 @@
         // ajax adding data to database
         $.ajax({
             url : url,
-            type: "POST",
+            type: "POST", 
             data: $('#form').serialize(),
             dataType: "JSON",
             success: function(data)
             {
-
                 alert(data.status);
                 $('#btnSave').text('Save'); //change button text
                 $('#btnSave').attr('disabled',false); //set button enable
@@ -81,7 +80,7 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign up Member</h2>
-                        <form id="form" >
+                        <form id="form">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -113,6 +112,7 @@
 
                                 <input type="hidden" id="btnSave" class="form-submit" style="margin-top:unset;" value="Simpan" onclick="save();"/>
                             </div>
+                        </form>
                     </div>
                 </div>
             </div>

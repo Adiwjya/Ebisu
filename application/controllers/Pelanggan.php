@@ -95,7 +95,6 @@ class Pelanggan extends CI_Controller{
     }
 
     public function ajax_add_r() {
-        if($this->session->userdata('logged_in')){
             $cek = $this->Mglobals->getAllQR("select count(*) as jml from pelanggan where nama = '".$this->input->post('nama')."';")->jml;
             if($cek > 0){
                 $status = "Data sudah ada";
@@ -120,9 +119,7 @@ class Pelanggan extends CI_Controller{
                 }
             }
             echo json_encode(array("status" => $status));
-        }else{
-            $this->modul->halaman('login');
-        }
+        
     }
     
     public function ganti(){
