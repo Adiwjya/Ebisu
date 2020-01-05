@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2019 at 06:55 PM
+-- Generation Time: Jan 05, 2020 at 05:29 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -66,7 +66,9 @@ CREATE TABLE `materi` (
 --
 
 INSERT INTO `materi` (`id_materi`, `nama`, `deskripsi`) VALUES
-('MTR001', 'TIK', 'Teknologi Informasi dan Komunikasi');
+('MTR001', 'TIK', 'Teknologi Informasi dan Komunikasi'),
+('MTR002', 'Analisis Bisnis', 'Analisa kebutuhan bisnis mendatang dengan menggunakan prasarana pendukung teknologi'),
+('MTR003', 'Tata Kelola Teknologi Informasi', 'Penataan dan perencanaan tata kelola sebuah teknologi untuk kepentingan bisnis dan lain-lain');
 
 -- --------------------------------------------------------
 
@@ -119,8 +121,7 @@ CREATE TABLE `pelanggan` (
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama`, `email`, `alamat`, `tlp`, `username`, `password`, `jenis_bidang`, `jenis_paket`) VALUES
 ('PL0001', 'user1', 'user1@gmail.com', 'test', 'test', 'user1@gmail.com', '123', '-', 'PKT001'),
-('PL0002', 'user2', 'user2@gmail.com', 'test', 'test', 'user2@gmail.com', '123', '-', 'PKT002'),
-('PL0003', 'user3', 'user3', 'test', 'test', 'user3', '123', '-', 'PKT003');
+('PL0002', 'user2', 'user2@gmail.com', 'test', 'test', 'user2@gmail.com', '123', '-', 'PKT002');
 
 -- --------------------------------------------------------
 
@@ -144,7 +145,8 @@ CREATE TABLE `pengajar` (
 --
 
 INSERT INTO `pengajar` (`id_pengajar`, `nama`, `email`, `alamat`, `tlp`, `username`, `password`, `id_materi`) VALUES
-('PG0001', 'Adi Wijaya', 'pengajar1@gmail.com', 'Test', '0000', 'pengajar1@gmail.com', '123', 'MTR001');
+('PG0001', 'Adi Wijaya', 'pengajar1@gmail.com', 'Test', '0000', 'pengajar1@gmail.com', '123', 'MTR001'),
+('PG0002', 'pengajar2', 'pengajar2@gmail.com', 'TEST`', 'TEST', 'pengajar2@gmail.com', '123', 'MTR002');
 
 -- --------------------------------------------------------
 
