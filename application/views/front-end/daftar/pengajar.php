@@ -59,15 +59,124 @@
 
     function pilih(paket) {
         document.getElementById('paket').value =  paket;
-        document.getElementById('signup').type = "hidden";
-        document.getElementById('btnSave').type = "button";
+
+    }
+
+    function q1(jawaban) {
+        document.getElementById('p1').value =  jawaban;
+    }
+
+    function q2(jawaban) {
+        document.getElementById('p2').value =  jawaban;
+    }
+
+    function q3(jawaban) {
+        document.getElementById('p3').value =  jawaban;
+    }
+
+    function q4(jawaban) {
+        document.getElementById('p4').value =  jawaban;
+    }
+
+    function q5(jawaban) {
+        document.getElementById('p5').value =  jawaban;
+    }
+
+    function q6(jawaban) {
+        document.getElementById('p6').value =  jawaban;
+    }
+
+    function q7(jawaban) {
+        document.getElementById('p7').value =  jawaban;
+    }
+
+    function q8(jawaban) {
+        document.getElementById('p8').value =  jawaban;
     }
     
+    function q9(jawaban) {
+        document.getElementById('p9').value =  jawaban;
+    }
+
+    
+
+    function q10(jawaban10) {
+        var a1 = document.getElementById('p1').value;
+        var a2 = document.getElementById('p2').value;
+        var a3 = document.getElementById('p3').value;
+        var a4 = document.getElementById('p4').value;
+        var a5 = document.getElementById('p5').value;
+        var a6 = document.getElementById('p6').value;
+        var a7 = document.getElementById('p7').value;
+        var a8 = document.getElementById('p8').value;
+        var a9 = document.getElementById('p9').value;
+        var a10 = jawaban10;
+        
+        var h1 = 0;
+        var h2 = 0;
+        var h3 = 0;
+        var h4 = 0;
+        var h5 = 0;
+        var h6 = 0;
+        var h7 = 0;
+        var h8 = 0;
+        var h9 = 0;
+        var h10 = 0;
+
+        // alert(h1);
+
+        if(a1=="1"){
+            h1=1;
+        }
+        if(a2=="1"){
+            h2=1;
+        }
+        if(a3=="1"){
+            h3=1;
+        }
+        if(a4=="1"){
+            h4=1;
+        }
+        if(a5=="1"){
+            h5=1;
+        }
+        if(a6=="1"){
+            h6=1;
+        }
+        if(a7=="1"){
+            h7=1;
+        }
+        if(a8=="1"){
+            h8=1;
+        }
+        if(a9=="1"){
+            h9=1;
+        }
+        if(a10=="1"){
+            h10=1;
+        }
+
+        var hasil = h1+h2+h3+h4+h5+h6+h7+h8+h9+h10;
+
+        // alert(hasil);
+        
+        if(hasil >= 6){
+            document.getElementById('hasil').innerHTML = hasil+"/10";
+            document.getElementById('desc').innerHTML = "Selamat Anda Lulus Test !";
+            document.getElementById('btnSave').type = "button";
+        }else{
+            document.getElementById('hasil').innerHTML = hasil+"/10";
+            document.getElementById('desc').innerHTML = "Maaf Anda Belum Lulus Test !";
+            document.getElementById('kembali').type = "button";
+        }
+        
+
+    }
     
 </script>
 
 </head>
-<body style=" overflow: hidden;">
+<body style="overflow: hidden;" >
 
     <div class="main" style="padding: 20px 0;">
         <!-- Sing in  Form -->
@@ -106,8 +215,6 @@
                             </div>
                             <div class="form-group form-button" >
                                 <a href="#two"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;" value="Lanjutkan"/></a>
-
-                                <input type="hidden" id="btnSave" class="form-submit" style="margin-top:unset;" value="Simpan" onclick="save();"/>
                             </div>
                     </div>
                     <div class="signup-image">
@@ -118,14 +225,14 @@
             </div>
         </section>
 
-        <section class="sign-in" id="two" style="margin-bottom: 100px;">
+        <section class="sign-in" id="two" style="margin-bottom: 800px; padding-top: 70px;">
             <div class="container" style="width: 900px; height:460px;">
             <h2 style="text-align: center; padding-top:25px;">Paket Promo Apalah</h2>
                 <div class="signin-content" >
                     <div class="jarak">
                         <div class="social-login">
                             <ul class="socials">
-                                <li><a href="#" onclick="pilih('<?php $p1 = 'MTR001'; echo $p1; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_laravel_and_vue_59tp.svg" alt="sing up image"></i></a>
+                                <li><a href="#test" onclick="pilih('<?php $p1 = 'MTR001'; echo $p1; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_laravel_and_vue_59tp.svg" alt="sing up image"></i></a>
                                 <h3 style="text-align: center; margin-top:130px;">Pilih Materi <br> <small>Sistem Informasi</small> </h3>
                             </li>
                             </ul>
@@ -134,7 +241,7 @@
                     <div class="jarak">
                         <div class="social-login">
                             <ul class="socials">
-                                <li><a href="#" onclick="pilih('<?php $p2 = 'MTR002'; echo $p2; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_visual_data_b1wx.svg" alt="sing up image"></i></a>
+                                <li><a href="#test" onclick="pilih('<?php $p2 = 'MTR002'; echo $p2; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_visual_data_b1wx.svg" alt="sing up image"></i></a>
                                 <h3 style="text-align: center; margin-top:130px;">Pilih Materi<br> <small>Bisnis</small></h3>
                                 </li>
                             </ul>
@@ -144,7 +251,7 @@
                     <div class="jarak">
                         <div class="social-login">
                             <ul class="socials">
-                                <li><a href="#" onclick="pilih('<?php $p3 = 'MTR003'; echo $p3; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_business_plan_5i9d.svg" alt="sing up image"></i></a>
+                                <li><a href="#test" onclick="pilih('<?php $p3 = 'MTR003'; echo $p3; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_business_plan_5i9d.svg" alt="sing up image"></i></a>
                                 <h3 style="text-align: center; margin-top:130px;">Pilih Materi<br> <small>Security</small></h3>
                                 </li>
                             </ul>
@@ -155,18 +262,222 @@
             </div>
         </section>
 
+        <section class="sign-in" id="test" style="margin-bottom:800px; padding-top: 200px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+
+                    <div class="signin-form">
+                        <h2 class="form-title" style="font-size: 35px;">Sesi Test Kelayakan</h2>
+                            <div class="form-group">
+                            <a href="#question_1"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;" value="Ikuti Test"/></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-in" id="question_1" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 1</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p1" id="p1" placeholder="Answer"/>
+                                <a href="#question_2" onclick="q1('1')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_2" onclick="q1('2')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_2" onclick="q1('3')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_2" onclick="q1('4')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-in" id="question_2" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 2</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p2" id="p2" placeholder="Answer"/>
+                                <a href="#question_3" onclick="q2('1')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_3" onclick="q2('2')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_3" onclick="q2('3')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_3" onclick="q2('4')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-in" id="question_3" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 3</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p3" id="p3" placeholder="Answer"/>
+                                <a href="#question_4" onclick="q3('1')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_4" onclick="q3('2')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_4" onclick="q3('3')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_4" onclick="q3('4')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-in" id="question_4" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 4</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p4" id="p4" placeholder="Answer"/>
+                                <a href="#question_5" onclick="q4('1')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_5" onclick="q4('2')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_5" onclick="q4('3')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_5" onclick="q4('4')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="sign-in" id="question_5" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 5</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p5" id="p5" placeholder="Answer"/>
+                                <a href="#question_6" onclick="q5('1')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_6" onclick="q5('2')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_6" onclick="q5('3')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_6" onclick="q5('4')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="sign-in" id="question_6" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 6</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p6" id="p6" placeholder="Answer"/>
+                                <a href="#question_7" onclick="q6('1')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_7" onclick="q6('2')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_7" onclick="q6('3')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_7" onclick="q6('4')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-in" id="question_7" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 7</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p7" id="p7" placeholder="Answer"/>
+                                <a href="#question_8" onclick="q7('1')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_8" onclick="q7('2')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_8" onclick="q7('3')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_8" onclick="q7('4')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-in" id="question_8" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 8</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p8" id="p8" placeholder="Answer"/>
+                                <a href="#question_9" onclick="q8('1')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_9" onclick="q8('2')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_9" onclick="q8('3')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_9" onclick="q8('4')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-in" id="question_9" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 9</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p9" id="p9" placeholder="Answer"/>
+                                <a href="#question_10" onclick="q9('1')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_10" onclick="q9('2')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_10" onclick="q9('3')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#question_10" onclick="q9('4')"><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-in" id="question_10" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Pertanyaan 10</h2>
+                            <div class="form-group">
+                            <h3 class="form-title" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ?</h3>
+                                <input type="hidden" name="p10" id="p10" placeholder="Answer"/>
+                                <a href="#result" onclick="q10('1')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#result" onclick="q10('2')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#result" onclick="q10('3')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                                <a href="#result" onclick="q10('4')" ><input type="button" name="signup" id="signup" class="form-submit" style="padding: revert;" value="Lorem ipsum dolor sit amet, consectetur adipiscing"/></a><br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-in" id="result" style="margin-bottom:800px; padding-top: 70px;">
+            <div class="container">
+                <div class="signin-content" style="padding-top: 42px; padding-bottom: 42px;">
+                    <div class="signin-form" style="width: 100%;">
+                        <h2 class="form-title" style="font-size: 35px;">Result</h2>
+                            <div class="form-group">
+                                <h3 class="form-title" id="hasil" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;"></h3>
+                                <h3 class="form-title" id="desc" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;"></h3>
+                                <input type="hidden" id="btnSave" class="form-submit" style="margin-top:unset;" value="Simpan" onclick="save();"/>
+                                <a href="#test"><input type="hidden" id="kembali" class="form-submit" style="margin-top:unset;" value="Kembali" /></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
-    
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="hapus">
-    <strong>Sukses!</strong> Data berhasil terhapus.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
+
     <!-- JS -->
     <!-- <script src="<?php echo base_url(); ?>app-assets/form/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>app-assets/form/js/main.js"></script> -->
-    <script src="<?php echo base_url(); ?>assets/front-end/js/jquery.min.js"></script>
+    <script src="<?php echo base_url();  ?>assets/front-end/js/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/front-end/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/front-end/js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
