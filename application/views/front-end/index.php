@@ -5,9 +5,9 @@
 	      	<img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="<?php echo base_url(); ?>assets/front-end/images/undraw_pair_programming_njlp.svg" alt="">
 	        <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
 	        	<div class="text mt-5">
-	        		<span class="subheading">What is Lorem Ipsum?</span>
-	            <h1 class="mb-3"><span>Design,</span> <span>Bussiness,</span> <span>Technology</span></h1>
-	            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+	        		<span class="subheading">Apa itu Ebisu?</span>
+	            <h1 class="mb-3"><span>Pembelajaran,</span> <span>Bisnis,</span> <span>Teknologi</span></h1>
+	            <p>Ebisu merupakan sebuah startup yang bergerak pada bidang pembelajaran untuk UMKM kecil.</p>
 	            <p><a href="#" class="btn btn-primary px-4 py-3">Get in touch</a></p>
 	          </div>
 	        </div>
@@ -58,7 +58,7 @@
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section ftco-animate">
             <h2 class="mb-4">Kenapa Harus Kami</h2>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+
           </div>
         </div>
         <div class="row">
@@ -68,8 +68,8 @@
             		<span class="flaticon-cloud"></span>
             	</div>
               <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-right">
-                <h3 class="heading">Super Fast Server</h3>
-                <p class="mb-0">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Memiliki Server yang Stabil</h3>
+                <p class="mb-0">Ebisu berhostingkan pada server yang memiliki kecepatan internet 100MBP/s dan Anti DDOS.</p>
               </div>
             </div>      
           </div>
@@ -79,8 +79,8 @@
             		<span class="flaticon-server"></span>
             	</div>
               <div class="media-body pl-4">
-                <h3 class="heading">Daily Backups</h3>
-                <p class="mb-0">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Backup Harian</h3>
+                <p class="mb-0">Setiap hari Server Ebisu membuat backup semua data user.</p>
               </div>
             </div>    
           </div>
@@ -90,8 +90,8 @@
             		<span class="flaticon-customer-service"></span>
             	</div>
               <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-right">
-                <h3 class="heading">Technical Services</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Customer Service 24 jam</h3>
+                <p>Kami memiliki customer service yang selalu tersedia 24 jam.</p>
               </div>
             </div>      
           </div>
@@ -101,8 +101,8 @@
             		<span class="flaticon-life-insurance"></span>
             	</div>
               <div class="media-body pl-4">
-                <h3 class="heading">Secure and Reliable</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Transaksi Aman</h3>
+                <p>Segala transaksi yang terjadi di Ebisu telah di enkripsi oleh KOMODO sehingga tidak dapat diretas dengan mudah.</p>
               </div>
             </div>      
           </div>
@@ -112,9 +112,9 @@
             		<span class="flaticon-cloud-computing"></span>
             	</div>
               <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-right">
-                <h3 class="heading">DNS Control</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>s
+                <h3 class="heading">Update Materi Baru Setiap 1 Minggu Sekali</h3>
+                <p>Materi akan selalu kami update setiap 1 Minggu Sekali bila tidak ada kendala yang terjadi.</p>
+              </div>
             </div>    
           </div>
           <div class="col-md-6 d-flex align-self-stretch ftco-animate">
@@ -123,8 +123,8 @@
             		<span class="flaticon-settings"></span>
             	</div>
               <div class="media-body pl-4">
-                <h3 class="heading">24/7 Support</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Penggunaan Yang Mudah</h3>
+                <p>Kami Ebisu selalu mengedepankan customer dalam kemudahan penggunaan website.</p>
               </div>
             </div>      
           </div>
@@ -186,8 +186,8 @@
     			<div class="col-lg-6 py-5">
     				<img src="<?php echo base_url(); ?>assets/front-end/images/undraw_podcast_q6p7.svg" class="img-fluid" alt="">
     				<div class="heading-section ftco-animate mt-5">
-	            <h2 class="mb-4">Our Main Services</h2>
-	            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
+	            <h2 class="mb-4">Fitur Utama Kami</h2>
+	            <p>Kami selalu ingin membuat customer kami puas dengan apa yang mereke bayarkan.</p>
 	          </div>
     			</div>
     			<div class="col-lg-6 py-5">
@@ -198,8 +198,8 @@
 		            		<span class="flaticon-cloud-computing"></span>
 		            	</div>
 		              <div class="mt-3 media-body media-body-2">
-		                <h3 class="heading">Cloud VPS</h3>
-		                <p>Even the all-powerful Pointing has no control about the blind texts</p>
+		                <h3 class="heading">Update Materi Baru Setiap 1 Minggu Sekali</h3>
+		                <p>Materi akan selalu kami update setiap 1 Minggu Sekali bila tidak ada kendala yang terjadi.</p>
 		              </div>
 		            </div>
     					</div>
@@ -209,8 +209,8 @@
 		            		<span class="flaticon-cloud"></span>
 		            	</div>
 		              <div class="mt-3 media-body media-body-2">
-		                <h3 class="heading">Share</h3>
-		                <p>Even the all-powerful Pointing has no control about the blind texts</p>
+		                <h3 class="heading">Memiliki Server yang Stabil</h3>
+		                <p>Ebisu berhostingkan pada server yang memiliki kecepatan internet 100MBP/s dan Anti DDOS.</p>
 		              </div>
 		            </div>
     					</div>
@@ -220,19 +220,19 @@
 		            		<span class="flaticon-server"></span>
 		            	</div>
 		              <div class="mt-3 media-body media-body-2">
-		                <h3 class="heading">VPS</h3>
-		                <p>Even the all-powerful Pointing has no control about the blind texts</p>
+		                <h3 class="heading">Backup Harian</h3>
+		                <p>Setiap hari Server Ebisu membuat backup semua data user.</p>
 		              </div>
 		            </div>
     					</div>
     					<div class="col-md-6 ftco-animate">
     						<div class="media block-6 services border text-center">
 		            	<div class="icon d-flex align-items-center justify-content-center">
-		            		<span class="flaticon-database"></span>
+		            		<span class="flaticon-customer-service"></span>
 		            	</div>
 		              <div class="mt-3 media-body media-body-2">
-		                <h3 class="heading">Dedicated</h3>
-		                <p>Even the all-powerful Pointing has no control about the blind texts</p>
+		                <h3 class="heading">Customer Service 24 jam</h3>
+		                <p>Kami memiliki customer service yang selalu tersedia 24 jam.</p>
 		              </div>
 		            </div>
     					</div>
@@ -346,7 +346,7 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">Mantap gan website nya sekarang umkm saya jadi berkembang pesat! Terima Kasih Ebisu!.</p>
                     <p class="name">Mark Web</p>
                     <span class="position">Marketing Manager</span>
                   </div>
@@ -360,7 +360,7 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">Wow,Sughoiiiii!.</p>
                     <p class="name">Mark Web</p>
                     <span class="position">Interface Designer</span>
                   </div>
@@ -374,7 +374,7 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">Bagus Sekali!!!!.</p>
                     <p class="name">Mark Web</p>
                     <span class="position">UI Designer</span>
                   </div>
@@ -388,7 +388,7 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">Sukak dengan Website ini!.</p>
                     <p class="name">Mark Web</p>
                     <span class="position">Web Developer</span>
                   </div>
@@ -402,7 +402,7 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">Pokoknya Mantap dah.</p>
                     <p class="name">Mark Web</p>
                     <span class="position">System Analyst</span>
                   </div>
@@ -419,17 +419,17 @@
     		<div class="row justify-content-center mb-5 pb-5">
     			<div class="col-md-7 text-center heading-section ftco-animate">
             <span class="subheading">Services</span>
-            <h2 class="mb-4">How it works</h2>
+            <h2 class="mb-4">Bagaimana Cara Kerjanya?</h2>
           </div>
     		</div>
     		<div class="row">
           <div class="col-md-12 nav-link-wrap mb-5 pb-md-5 pb-sm-1 ftco-animate">
             <div class="nav ftco-animate nav-pills justify-content-center text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link active" id="v-pills-nextgen-tab" data-toggle="pill" href="#v-pills-nextgen" role="tab" aria-controls="v-pills-nextgen" aria-selected="true">Next gen VPS</a>
+              <a class="nav-link active" id="v-pills-nextgen-tab" data-toggle="pill" href="#v-pills-nextgen" role="tab" aria-controls="v-pills-nextgen" aria-selected="true">1.Melakukan Pendaftaran</a>
 
-              <a class="nav-link" id="v-pills-performance-tab" data-toggle="pill" href="#v-pills-performance" role="tab" aria-controls="v-pills-performance" aria-selected="false">Performance</a>
+              <a class="nav-link" id="v-pills-performance-tab" data-toggle="pill" href="#v-pills-performance" role="tab" aria-controls="v-pills-performance" aria-selected="false">2.Memilih Paket</a>
 
-              <a class="nav-link" id="v-pills-effect-tab" data-toggle="pill" href="#v-pills-effect" role="tab" aria-controls="v-pills-effect" aria-selected="false">Effectiveness</a>
+              <a class="nav-link" id="v-pills-effect-tab" data-toggle="pill" href="#v-pills-effect" role="tab" aria-controls="v-pills-effect" aria-selected="false">3.Memulai Belajar</a>
             </div>
           </div>
           <div class="col-md-12 align-items-center ftco-animate">
@@ -442,10 +442,9 @@
 	              		<img src="<?php echo base_url(); ?>assets/front-end/images/undraw_laravel_and_vue_59tp.svg" class="img-fluid" alt="">
 	              	</div>
 	              	<div class="one-half ml-md-5 align-self-center">
-		                <h2 class="mb-4">Next gen VPS hosting</h2>
-		              	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-		                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-		                <p><a href="#" class="btn btn-primary py-3">Get in touch</a></p>
+		                <h2 class="mb-4">Melakukan Pendaftaran</h2>
+		              	<p>Sebelum ikut Ebisu anda harus melakukan Pendaftaran dan mengisi data diri anda.</p>
+		                <p><a href="#" class="btn btn-primary py-3">Daftar</a></p>
 		              </div>
 	              </div>
               </div>
@@ -456,10 +455,9 @@
 	              		<img src="<?php echo base_url(); ?>assets/front-end/images/undraw_visual_data_b1wx.svg" class="img-fluid" alt="">
 	              	</div>
 	              	<div class="one-half order-first mr-md-5 align-self-center">
-		                <h2 class="mb-4">Performance VPS hosting</h2>
-		              	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-		                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-		                <p><a href="#" class="btn btn-primary py-3">Get in touch</a></p>
+		                <h2 class="mb-4">Memilih Paket</h2>
+		              	<p>Setelah melakukan pendaftaran anda harus memilih paket yang sesuai dengan kebutuhan anda.</p>
+		                <p><a href="#" class="btn btn-primary py-3">Pilih Paket</a></p>
 		              </div>
 	              </div>
               </div>
@@ -470,10 +468,9 @@
 	              		<img src="<?php echo base_url(); ?>assets/front-end/images/undraw_business_plan_5i9d.svg" class="img-fluid" alt="">
 	              	</div>
 	              	<div class="one-half ml-md-5 align-self-center">
-		                <h2 class="mb-4">Effective VPS hosting</h2>
-		              	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-		                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-		                <p><a href="#" class="btn btn-primary py-3">Get in touch</a></p>
+		                <h2 class="mb-4">Memulai Belajar</h2>
+		              	<p>Selamat anda sudah terdaftar dan telah memilih paket sekarang anda sudah bisa memulai belajar anda.Semoga Sukses!</p>
+		                <p><a href="#" class="btn btn-primary py-3">Materi</a></p>
 		              </div>
 	              </div>
               </div>
@@ -487,8 +484,8 @@
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2>Recent Blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+            <h2>Materi Terbaru</h2>
+        
           </div>
         </div>
         <div class="row">

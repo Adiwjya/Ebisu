@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/front-end/css/flaticon.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/front-end/css/icomoon.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/front-end/css/style.css">
+  
   </head>
   <body>
     
