@@ -25,12 +25,17 @@ class Home extends CI_Controller{
             $data['email'] = $session_data['email'];
             $data['akses'] = $session_data['akses'];
             $data['nama'] = $session_data['nama'];
+            $data['paket'] = $this->Mglobals->getAll("paket");
+
+            
 
             $this->load->view('front-end/af_login/head', $data);
             $this->load->view('front-end/index');
             $this->load->view('front-end/footer');
         }else{
-            $this->load->view('front-end/head');
+            $data['paket'] = $this->Mglobals->getAll("paket");
+
+            $this->load->view('front-end/head', $data);
             $this->load->view('front-end/index');
             $this->load->view('front-end/footer');
         }
@@ -59,13 +64,40 @@ class Home extends CI_Controller{
             $data['email'] = $session_data['email'];
             $data['akses'] = $session_data['akses'];
             $data['nama'] = $session_data['nama'];
+            $data['paket'] = $this->Mglobals->getAll("paket");
 
             $this->load->view('front-end/af_login/head', $data);
             $this->load->view('front-end/paket');
             $this->load->view('front-end/footer');
         }else{
-            $this->load->view('front-end/head');
+            $data['paket'] = $this->Mglobals->getAll("paket");
+            $this->load->view('front-end/head', $data);
             $this->load->view('front-end/paket');
+            $this->load->view('front-end/footer');
+        }
+    }
+
+    public function kelas(){
+        if($this->session->userdata('logged_in')){
+            $session_data = $this->session->userdata('logged_in');
+            $data['email'] = $session_data['email'];
+            $data['akses'] = $session_data['akses'];
+            $data['nama'] = $session_data['nama'];
+            $p_data = $this->Mglobals->getAllQR("select a.* from paket a join pelanggan b on b.jenis_paket = a.id_paket where b.email = '".$data['email']."' and b.nama = '".$data['nama']."';");
+            $data['nama_p'] = $p_data -> nama;
+            $data['durasi'] = $p_data -> durasi;
+            $data['deskripsi'] = $p_data -> deskripsi;
+            $data['harga'] = $p_data -> harga;
+            $data['id'] = $p_data -> id_paket;
+
+
+            $this->load->view('front-end/af_login/head', $data);
+            $this->load->view('front-end/kelas');
+            $this->load->view('front-end/footer');
+        }else{
+            $data['paket'] = $this->Mglobals->getAllQR("select a.* from paket a join pelanggan b on b.jenis_paket = a.id_paket where b.email = '".$data['email']."' and b.nama = '".$data['nama']."';");
+            $this->load->view('front-end/head', $data);
+            $this->load->view('front-end/kelas');
             $this->load->view('front-end/footer');
         }
     }
@@ -87,6 +119,33 @@ class Home extends CI_Controller{
         }
     }
 
+    public function profile(){
+        if($this->session->userdata('logged_in')){
+            $session_data = $this->session->userdata('logged_in');
+            $data['email'] = $session_data['email'];
+            $data['akses'] = $session_data['akses'];
+            $data['nama'] = $session_data['nama'];
+            
+            if ($data['akses'] == "Member") {
+                $pro = $this->Mglobals->getAllQR("select * from pelanggan where email = '".$data['email']."' and nama = '".$data['nama']."';");
+                $data['alamat'] = $pro->alamat;
+                $data['tlp'] = $pro->tlp;
+            }else{
+                $pro = $this->Mglobals->getAllQR("select * from pengajar where email = '".$data['email']."' and nama = '".$data['nama']."';");
+                $data['alamat'] = $pro->alamat;
+                $data['tlp'] = $pro->tlp;
+            }
+
+            $this->load->view('front-end/af_login/head', $data);
+            $this->load->view('front-end/profile');
+            $this->load->view('front-end/footer');
+        }else{
+            $this->load->view('front-end/head');
+            $this->load->view('front-end/profile');
+            $this->load->view('front-end/footer');
+        }
+    }
+
     public function login(){
         $this->load->view('front-end/login/index');
     }
@@ -96,11 +155,13 @@ class Home extends CI_Controller{
     }
 
     public function daftar_member(){
-        $this->load->view('front-end/daftar/member');
+        $data['paket'] = $this->Mglobals->getAllQR("select * from paket limit 3");
+        $this->load->view('front-end/daftar/member', $data);
     }
 
     public function daftar_pengajar(){
-        $this->load->view('front-end/daftar/pengajar');
+        $data['materi'] = $this->Mglobals->getAll("materi");
+        $this->load->view('front-end/daftar/pengajar', $data);
     }
     
     public function logout(){

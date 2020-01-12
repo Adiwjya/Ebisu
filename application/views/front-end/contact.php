@@ -14,63 +14,45 @@
       <div class="container">
         <div class="row d-flex mb-5 contact-info">
           <div class="col-md-12 mb-4">
-            <h2 class="h4">Profile Anda</h2>
+            <h2 class="h4">Contact Information</h2>
           </div>
           <div class="w-100"></div>
-          <div class="col-md-12">
-            <img src="<?php echo base_url(); ?>assets/front-end/images/person_1.jpg" alt="wibu" style="width:100px;height:100px">
-
+          <div class="col-md-3">
+            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Email:</span> <a href="mailto:info@ebisu.com">info@ebisu.com</a></p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Website</span> <a href="#">ebisu.com</a></p>
           </div>
         </div>
         <div class="row block-9">
           <div class="col-md-6 pr-md-5">
             <form action="#">
               <div class="form-group">
-                Nama: Rudy
+                <input type="text" class="form-control" placeholder="Your Name">
               </div>
               <div class="form-group">
-                Email: Rudy@gmail.com
+                <input type="text" class="form-control" placeholder="Your Email">
               </div>
               <div class="form-group">
-                Status: Pelanggan
+                <input type="text" class="form-control" placeholder="Subject">
               </div>
               <div class="form-group">
-                Pesan Anda: Tetap Semangat!
+                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Edit Profile" class="btn btn-primary py-3 px-5" data-toggle="modal" href="#myModal">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
             </form>
           
           </div>
 
-
+          <div class="col-md-6" id="map"></div>
         </div>
       </div>
-
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel" style="float: right;">Edit Profile</h4>
-      </div>
-      <div class="modal-body">
-         <form>
-           Nama:<br>
-           <input type="text" name="nama">
-            <br>
-           Email:<br>
-           <input type="text" name="email">
-           <br>
-           Pesan Anda:<br>
-           <input type="text" name="pesan" style="height: 100px;">
-          </form> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary">Simpan</button>
-      </div>
-    </div>
-  </div>
-</div>
     </section>

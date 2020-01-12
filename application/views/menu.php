@@ -48,6 +48,11 @@
                   <p>Materi</p>
                 </a>
               </li>
+              <li class="nav-item">
+              <a href="<?php echo base_url(); ?>paket" class="nav-link">
+                  <p>Paket</p>
+                </a>
+              </li>
             </ul>
           </li>
 

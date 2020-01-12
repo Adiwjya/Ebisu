@@ -446,6 +446,16 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
+.profile-new{
+  background-color:white;
+  position: absolute;
+  height: 30vw;
+  border-radius: 35px;
+  width: 80vw;
+  top: -18vw;
+  opacity: 0.9;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -9602,7 +9612,7 @@ textarea.form-control {
       top: -1em;
       color: #000; }
     .block-7 .price .number {
-      font-size: 50px;
+      font-size: 35px;
       font-weight: 700;
       color: #000; }
       .block-7 .price .number small {

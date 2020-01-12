@@ -16,16 +16,16 @@
 <script type="text/javascript"> 
     
 function p1(){
-    var num_acc1= document.getElementById('vs1').value;
-    document.getElementById('acc').value = num_acc1;
+    var num_acc1= document.getElementById('vs3').value;
+    document.getElementById('acc').value = "XXXX - XXXX - "+num_acc1;
 }
 function p2(){
-    var num_acc2= document.getElementById('pp1').value;
-    document.getElementById('acc').value = num_acc2;
+    var num_acc2= document.getElementById('pp3').value;
+    document.getElementById('acc').value = "XXXX - XXXX - "+num_acc2;
 }
 function p3(){
-    var num_acc3= document.getElementById('mc1').value;
-    document.getElementById('acc').value = num_acc3;
+    var num_acc3= document.getElementById('mc3').value;
+    document.getElementById('acc').value = "XXXX - XXXX - "+num_acc3;
 }
 
     function save(){
@@ -56,8 +56,9 @@ function p3(){
         });
     }
 
-    function pilih(paket) {
+    function pilih(paket,harga) {
         document.getElementById('paket').value =  paket;
+        document.getElementById('hh').value = "Rp."+harga;
         document.getElementById('signup').type = "hidden";
         document.getElementById('btnSave').type = "button";
     }
@@ -120,27 +121,38 @@ function p3(){
 
         <section class="sign-in" id="two" style="margin-bottom: 100px; padding-top:50px;">
             <div class="container" style="background-color: unset; box-shadow:none;">
-            <div class="row" style="display: inline-flex;margin-left: -50px;">
-                <div class="col-md-4">
-                    <div class="container" style="width: 300px; margin:20px;">
-                        <div class="signin-content" style="padding-top:55px;">
+            <div class="row" style="display: inline-flex;margin-left: -130px;">
+                
+            <?php
+                foreach ($paket->result() as $row)
+                {
+            ?>
+
+            <div class="col-md-4">
+                    <div class="container" style="width: 350px; margin:20px;">
+                        <div class="signin-content" style="padding-top:55px; padding-bottom: 60px;">
                             <div class="jarak">
                                 <div class="social-login" style="margin-top: unset;">
                                     <ul class="socials">
                                         <span class="price">
-                                            <span class="number" style="font-size: 35pt;padding: 60px ;">0<small style="font-size:8pt;" class="per">/mo</small>
+                                            <span class="number" style="font-size: 25pt;padding: 60px ;"><?php echo $row->harga; ?><small style="font-size:8pt;" class="per">/ <?php echo $row->durasi; ?> Bln</small>
                                         </span><br>
-                                        <span style="color: #b3b3b3;font-size: large;">100% free. Forever</span>
-                                        <h3 class="heading-2 mb-3">Enjoy All The Features ok</h3>
-                                        
+                                        <span style="color: #b3b3b3;font-size: large;"><center ><?php echo $row->deskripsi;?></center></span>
+                                        <h3 class="heading-2 mb-3">  <center>Materi yang tersedia</center></h3>
                                         <ul class="pricing-text mb-4">
-                                        <li><strong>150 GB</strong> Bandwidth</li>
-                                        <li><strong>100 GB</strong> Storage</li>
-                                        <li><strong>$1.00 / GB</strong> Overages</li>
-                                        <li>All features</li>
+                                        <?php 
+                                        $ss = $this->Mglobals->getAllQ("Select * from paket_detail where id_paket = '".$row->id_paket."' "); 
+                                        foreach ($ss->result() as $row1) {
+                                            $materi = $this->Mglobals->getAllQR("select nama from materi where id_materi = '".$row1->id_materi."';");
+                                            $pengajar = $this->Mglobals->getAllQR("select nama from pengajar where id_pengajar = '".$row1->id_pengajar."';");
+                                        ?>
+                                        <li><strong><?php echo $materi->nama; ?></strong> <?php echo $pengajar->nama; ?></li>
+                                        <?php
+                                        }
+                                        ?>
                                         </ul>
-                                        <a href="#tho" onclick="pilih('<?php $p1 ='PKT001'; echo $p1; ?>')"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;" value="Lanjutkan"/></a>
-</li>
+                                        <a href="#tho" onclick="pilih('<?php echo $row->id_paket; ?>','<?php echo $row->harga; ?>')"><input type="button" name="signup" id="signup" class="form-submit" style="width: -moz-available; " value="<?php echo $row->nama; ?>"/></a>
+                                    </li>
                                     </ul>
                                 </div>
                             </div>
@@ -148,61 +160,11 @@ function p3(){
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                <div class="container" style="width: 300px; margin:20px;">
-                        <div class="signin-content" style="padding-top:55px;">
-                            <div class="jarak">
-                                <div class="social-login" style="margin-top: unset;">
-                                    <ul class="socials">
-                                        <span class="price">
-                                            <span class="number" style="font-size: 35pt;padding: 60px ;">0<small style="font-size:8pt;" class="per">/mo</small>
-                                        </span><br>
-                                        <span style="color: #b3b3b3;font-size: large;">100% free. Forever</span>
-                                        <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
-                                        
-                                        <ul class="pricing-text mb-4">
-                                        <li><strong>150 GB</strong> Bandwidth</li>
-                                        <li><strong>100 GB</strong> Storage</li>
-                                        <li><strong>$1.00 / GB</strong> Overages</li>
-                                        <li>All features</li>
-                                        </ul>
-                                        <a href="#tho" onclick="pilih('<?php $p1 ='PKT001'; echo $p1; ?>')"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;" value="Lanjutkan"/></a>
-</li>
-                                    </ul>
-                                </div>
-                            </div>
+                
+            <?php
+                }
+            ?>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                <div class="container" style="width: 300px; margin:20px;">
-                        <div class="signin-content" style="padding-top:55px;">
-                            <div class="jarak">
-                                <div class="social-login" style="margin-top: unset;">
-                                    <ul class="socials">
-                                        <span class="price">
-                                            <span class="number" style="font-size: 35pt;padding: 60px ;">0<small style="font-size:8pt;" class="per">/mo</small>
-                                        </span><br>
-                                        <span style="color: #b3b3b3;font-size: large;">100% free. Forever</span>
-                                        <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
-                                        
-                                        <ul class="pricing-text mb-4">
-                                        <li><strong>150 GB</strong> Bandwidth</li>
-                                        <li><strong>100 GB</strong> Storage</li>
-                                        <li><strong>$1.00 / GB</strong> Overages</li>
-                                        <li>All features</li>
-                                        </ul>
-                                        <a href="#tho" onclick="pilih('<?php $p1 ='PKT001'; echo $p1; ?>')"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;" value="Lanjutkan"/></a>
-
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                                    
-                        </div>
-                    </div>
-                </div>
             </div>
             </div>
         </section>
@@ -213,27 +175,24 @@ function p3(){
 
 
         
-        <section class="sign-in" id="tho" style="margin-bottom: 100px; padding-top:50px;margin-right:275px;">
+        <section class="sign-in" id="tho" style="margin-bottom: 100px; padding-top:50px;">
 
         <div class="container" style="background-color: unset; box-shadow:none;">
-            <div class="row" style="display: inline-flex;margin-left: -50px;">
+            <div class="row" style="display: inline-flex;margin-left: -137px;">
                 <div class="col-md-4">
-                    <div class="container" style="width: 400px; margin:20px;">
+                    <div class="container" style="width: 350px; margin:20px;">
                         <div class="signin-content" style="padding-top:55px;">
                             <div class="jarak">
-                            <img src="<?php echo base_url(); ?>app-assets/form/images/visa.jpg" alt="sing up image" style="width:100px;height:100px;margin-left:30px">
+                            <img src="<?php echo base_url(); ?>app-assets/form/images/visa.jpg" alt="sing up image" style="">
                                 <div class="social-login" style="margin-top: unset;">
-
-                                        <div class="form-group">
-                                            
-                                            <input id="vs1" type="email"  placeholder="Account Number"/>
-                            
-                                            
+                                        <div class="form-group" style="display:inline-flex;">
+                                            <input id="vs1" type="text" maxlength="4" style="width: 80px;padding: 0px 20px;"  placeholder="XXXX"/>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input id="vs2" type="text" maxlength="4" style="width: 80px;padding: 0px 20px;" placeholder="XXXX"/>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;                       
+                                            <input id="vs3" type="text" maxlength="4" style="width: 80px;padding: 0px 20px;" placeholder="XXXX"/> 
                                         </div>
-
                                 </div>
                                 <br>
-                                <a href="#thu" onclick="p1()"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;margin-left:45px" value="Lanjutkan" /></a>
+                                <a href="#thu" onclick="p1()"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;width: -moz-available;" value="Lanjutkan" /></a>
 
                             </div>
                                     
@@ -241,21 +200,17 @@ function p3(){
                     </div>
                 </div>
                 <div class="col-md-4">
-                <div class="container" style="width: 400px; margin:20px;">
+                <div class="container" style="width: 350px; margin:20px;">
                         <div class="signin-content" style="padding-top:55px;">
                             <div class="jarak">
-                            <img src="<?php echo base_url(); ?>app-assets/form/images/paypal.jpg" alt="sing up image" style="width:100px;height:100px;margin-left:30px">
+                            <img src="<?php echo base_url(); ?>app-assets/form/images/paypal.jpg" alt="sing up image" style="width:235px;margin-left:43px">
                                 <div class="social-login" style="margin-top: unset;">
-
-                                <div class="form-group">
-                                            
-                                            <input id="pp1" type="email"  placeholder="Account Number"/>
-                                
-                                        </div>
-
+                                            <input id="pp1" type="text" style="width: 80px;padding: 0px 20px;"  placeholder="XXXX"/>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input id="pp2" type="text" style="width: 80px;padding: 0px 20px;" placeholder="XXXX"/>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;                       
+                                            <input id="pp3" type="text" style="width: 80px;padding: 0px 20px;" placeholder="XXXX"/> 
                                 </div>
                                 <br>
-                                <a href="#thu" onclick="p2()"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;margin-left:45px" value="Lanjutkan"/></a>
+                                <a href="#thu" onclick="p2()"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;width: -moz-available;" value="Lanjutkan"/></a>
 
                             </div>
 
@@ -263,22 +218,20 @@ function p3(){
                     </div>
                 </div>
                 <div class="col-md-4">
-                <div class="container" style="width: 400px; margin:20px;">
+                <div class="container" style="width: 350px; margin:20px;">
                         <div class="signin-content" style="padding-top:55px;">
                             <div class="jarak">
-                            <img src="<?php echo base_url(); ?>app-assets/form/images/master.jpg" alt="sing up image" style="width:100px;height:100px;margin-left:30px">
+                            <img src="<?php echo base_url(); ?>app-assets/form/images/master.jpg" alt="sing up image" style="width:200px; margin:28px; margin-left:63px; ">
                                 <div class="social-login" style="margin-top: unset;">
 
-                                <div class="form-group">
-                                            
-                                            <input id="mc1" type="email"  placeholder="Account Number"/>
-                            
-                                        </div>
+                                            <input id="mc1" type="text" style="width: 80px;padding: 0px 20px;"  placeholder="XXXX"/>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input id="mc2" type="text" style="width: 80px;padding: 0px 20px;" placeholder="XXXX"/>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;                       
+                                            <input id="mc3" type="text" style="width: 80px;padding: 0px 20px;" placeholder="XXXX"/> 
 
                                 </div>
 
                                 <br>
-                                <a href="#thu" onclick="p3()"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;margin-left:45px" value="Lanjutkan"/></a>
+                                <a href="#thu" onclick="p3()"><input type="button" name="signup" id="signup" class="form-submit" style="margin-top:unset;width: -moz-available;" value="Lanjutkan"/></a>
 
                             </div>
                                     
@@ -290,48 +243,42 @@ function p3(){
         
         </section>
 
-        <section class="sign-in" id="thu" style="margin-bottom: 100px; padding-top:50px;margin-right:275px;">
+        <section class="sign-in" id="thu" style="margin-bottom: 100px; padding-top:50px;">
         
-<div class="container" style="margin-left:300px">
-<div class="row">
-<div class="col-sm-8" style="padding: 55px">
+        <div class="container">
+        <div class="row">
+        <div class="col-sm-8" style="padding: 55px">
 
-<div style="font-size: 25pt">Account Number</div>
-<div class="form-group">                                            
-<input style="font-size: 15pt" type="email"  id="acc"/>
-</div>
-<div style="font-size: 25pt">Jumlah Nominal</div>
-<div class="form-group">                                            
-<input style="font-size: 15pt" type="email"  placeholder="Rp.500.000"/>
-<br>
-<br>
-<div> Periksa kembali data pembayaran Anda sebelum melanjutkan transaksi</div>
-<div> Jika melalui teller, Isi Nama Pemilik Rekening dengan nama penyetor dan Nomor Rekening dengan : 0000</div>
-<div> Demi Keamanan transaksi Anda pastikan untuk tidak menginformasikan bukti dan data pembayaran</div>
-<br>
-<br>
-<div style="color: red;font-size: 15pt">WARNING!!!</div>
-<div>Begitu proses telah selesai transaksi tidak dapat direfund</div>
+        <div style="font-size: 15pt">Account Number</div>
+        <div class="form-group">                                            
+        <input style="font-size: 20pt" type="email"  id="acc" readonly/>
+        </div>
+        <div style="font-size: 15pt">Jumlah Nominal</div>
+        <div class="form-group">                                            
+        <input style="font-size: 20pt" type="email" id="hh"  placeholder="" readonly/>
+        <br>
+        <br>
+        <div> Periksa kembali data pembayaran Anda sebelum melanjutkan transaksi</div>
+        <div> Jika melalui teller, Isi Nama Pemilik Rekening dengan nama penyetor dan Nomor Rekening dengan : 0000</div>
+        <div> Demi Keamanan transaksi Anda pastikan untuk tidak menginformasikan bukti dan data pembayaran</div>
+        <br>
+        <br>
+        <div style="color: red;font-size: 15pt">WARNING!!!</div>
+        <div>Begitu proses telah selesai transaksi tidak dapat direfund</div>
 
-<input type="hidden" id="btnSave" class="form-submit" style="margin-top:unset;margin-left:600px" value="Simpan" onclick="save();"/>
-</div>
+        <input type="hidden" id="btnSave" class="form-submit" style="margin-top:unset;margin-left:600px" value="Simpan" onclick="save();"/>
+        </div>
 
 
-</div>
-</div>
+        </div>
+        </div>
 
-</div>
+        </div>
         
         </section>
 
     </div>
     
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="hapus">
-    <strong>Sukses!</strong> Data berhasil terhapus.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
     <!-- JS -->
     <!-- <script src="<?php echo base_url(); ?>app-assets/form/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>app-assets/form/js/main.js"></script> -->

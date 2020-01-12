@@ -31,22 +31,29 @@
 	              <div class="select-wrap">
                   <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                   <select name="" id="" class="form-control">
-                  	<option value="">Paket 1</option>
-                    <option value="">Paket 2</option>
-                    <option value="">Paket 3</option>
-                    <option value="">Paket 4</option>
-                    <option value="">Paket 5</option>
+				  	<?php
+						foreach ($paket->result() as $row)
+						{
+					?>
+					<option value=""><?php echo $row->nama; ?></option>
+					<?php
+						}
+					?>
                   </select>
                 </div>
                 <input type="submit" class="search-domain btn btn-primary text-center" value="Search">
 	            </div>
             </form>
             <p class="domain-price mt-2">
-            	<span><small>Paket 1</small> $9.75</span> 
-            	<span><small>Paket 1</small> $9.50</span> 
-            	<span><small>Paket 1</small> $8.95</span> 
-            	<span><small>Paket 1</small> $7.80</span>
-            	<span><small>Paket 1</small> $7.95</span>
+				<?php
+					foreach ($paket->result() as $row)
+					{
+				?>
+				<span><small><?php echo $row->nama; ?></small>&nbsp;&nbsp;<?php echo $row->harga; ?></span> 
+				<?php
+					}
+				?>
+            	
             </p>
     			</div>
     		</div>
@@ -246,82 +253,46 @@
     	<div class="container">
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-4">Paket Natal</h2>
+            <h2 class="mb-4">Paket Promo</h2>
           </div>
         </div>
     		<div class="row d-flex">
+
+			<?php
+				foreach ($paket->result() as $row)
+				{
+			?>		
+
 	        <div class="col-lg-3 col-md-6 ftco-animate">
 	          <div class="block-7">
 	            <div class="text-center">
-		            <h2 class="heading">Free</h2>
-		            <span class="price"><sup>$</sup> <span class="number">0<small class="per">/mo</small></span>
-		            <span class="excerpt d-block">100% free. Forever</span>
-		            <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
+		            <h2 class="heading"><?php echo $row->nama; ?></h2>
+		            <span class="price"><sup></sup> <span class="number"><?php echo $row->harga; ?><small class="per">/<?php echo $row->durasi; ?>Bln</small></span>
+		            <span class="excerpt d-block"><?php echo $row->deskripsi;?></span>
+		            <h3 class="heading-2 mb-3">Materi yang tersedia</h3>
 		            
 		            <ul class="pricing-text mb-4">
-		              <li><strong>150 GB</strong> Bandwidth</li>
-		              <li><strong>100 GB</strong> Storage</li>
-		              <li><strong>$1.00 / GB</strong> Overages</li>
-		              <li>All features</li>
+					<?php 
+					$ss = $this->Mglobals->getAllQ("Select * from paket_detail where id_paket = '".$row->id_paket."' "); 
+					foreach ($ss->result() as $row1) {
+						$materi = $this->Mglobals->getAllQR("select nama from materi where id_materi = '".$row1->id_materi."';");
+						$pengajar = $this->Mglobals->getAllQR("select nama from pengajar where id_pengajar = '".$row1->id_pengajar."';");
+					?>
+					<li><strong><?php echo $materi->nama; ?></strong> <?php echo $pengajar->nama; ?></li>
+					<?php
+					}
+					?>
 		            </ul>
-		            <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
+		            <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Pilih Paket</a>
 	            </div>
 	          </div>
-	        </div>
-	        <div class="col-lg-3 col-md-6 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-		            <h2 class="heading">Startup</h2>
-		            <span class="price"><sup>$</sup> <span class="number">19<small class="per">/mo</small></span></span>
-		            <span class="excerpt d-block">All features are included</span>
-		            <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
-		            
-		            <ul class="pricing-text mb-4">
-		              <li><strong>450 GB</strong> Bandwidth</li>
-		              <li><strong>400 GB</strong> Storage</li>
-		              <li><strong>$2.00 / GB</strong> Overages</li>
-		              <li>All features</li>
-		            </ul>
-		            <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-lg-3 col-md-6 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-		            <h2 class="heading">Premium</h2>
-		            <span class="price"><sup>$</sup> <span class="number">49<small class="per">/mo</small></span></span>
-		            <span class="excerpt d-block">All features are included</span>
-		            <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
-		            
-		            <ul class="pricing-text mb-4">
-		              <li><strong>250 GB</strong> Bandwidth</li>
-		              <li><strong>200 GB</strong> Storage</li>
-		              <li><strong>$5.00 / GB</strong> Overages</li>
-		              <li>All features</li>
-		            </ul>
-		            <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-lg-3 col-md-6 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-		            <h2 class="heading">Pro</h2>
-		            <span class="price"><sup>$</sup> <span class="number">99<small class="per">/mo</small></span></span>
-		            <span class="excerpt d-block">All features are included</span>
-		            <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
-		            
-		            <ul class="pricing-text mb-4">
-		              <li><strong>450 GB</strong> Bandwidth</li>
-		              <li><strong>400 GB</strong> Storage</li>
-		              <li><strong>$20.00 / GB</strong> Overages</li>
-		              <li>All features</li>
-		            </ul>
-			          <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
-	            </div>
-	          </div>
-	        </div>
+			</div>
+
+			<?php
+				}
+			?>
+			
+
 	      </div>
     	</div>
     </section>

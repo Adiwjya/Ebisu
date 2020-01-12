@@ -162,11 +162,11 @@
         
         if(hasil >= 6){
             document.getElementById('hasil').innerHTML = hasil+"/10";
-            document.getElementById('desc').innerHTML = "Selamat Anda Lulus Test !";
+            document.getElementById('desc').innerHTML = "Selamat Anda Lulus Test ! <br> Anda dapat mendaftarkan akun sekarang";
             document.getElementById('btnSave').type = "button";
         }else{
             document.getElementById('hasil').innerHTML = hasil+"/10";
-            document.getElementById('desc').innerHTML = "Maaf Anda Belum Lulus Test !";
+            document.getElementById('desc').innerHTML = "Maaf Anda Belum Lulus Test ! <br> Anda belum dapat mendaftarkan akun sekarang";
             document.getElementById('kembali').type = "button";
         }
         
@@ -227,36 +227,27 @@
 
         <section class="sign-in" id="two" style="margin-bottom: 800px; padding-top: 70px;">
             <div class="container" style="width: 900px; height:460px;">
-            <h2 style="text-align: center; padding-top:25px;">Paket Promo Apalah</h2>
+            <h2 style="text-align: center; padding-top:25px;">Materi</h2>
                 <div class="signin-content" >
-                    <div class="jarak">
-                        <div class="social-login">
-                            <ul class="socials">
-                                <li><a href="#test" onclick="pilih('<?php $p1 = 'MTR001'; echo $p1; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_laravel_and_vue_59tp.svg" alt="sing up image"></i></a>
-                                <h3 style="text-align: center; margin-top:130px;">Pilih Materi <br> <small>Sistem Informasi</small> </h3>
-                            </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="jarak">
-                        <div class="social-login">
-                            <ul class="socials">
-                                <li><a href="#test" onclick="pilih('<?php $p2 = 'MTR002'; echo $p2; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_visual_data_b1wx.svg" alt="sing up image"></i></a>
-                                <h3 style="text-align: center; margin-top:130px;">Pilih Materi<br> <small>Bisnis</small></h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
+                <?php
+                    foreach ($materi->result() as $row)
+                    {
+                ?>
 
                     <div class="jarak">
                         <div class="social-login">
                             <ul class="socials">
-                                <li><a href="#test" onclick="pilih('<?php $p3 = 'MTR003'; echo $p3; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_business_plan_5i9d.svg" alt="sing up image"></i></a>
-                                <h3 style="text-align: center; margin-top:130px;">Pilih Materi<br> <small>Security</small></h3>
-                                </li>
+                                <li><a href="#test" onclick="pilih('<?php echo $row->id_materi; ?>')"><i class="display-flex-center zmdi zmdi-facebook" style="width: 200px; height:0px; content:none;"><img src="<?php echo base_url(); ?>assets/front-end/images/undraw_laravel_and_vue_59tp.svg" alt="sing up image"></i></a>
+                                <h3 style="text-align: center; margin-top:130px;"><?php echo $row->nama; ?> <br> <small>Sistem Informasi</small> </h3>
+                            </li>
                             </ul>
                         </div>
                     </div>
+
+                <?php
+                    }
+                ?>
                     
                 </div>
             </div>
@@ -464,7 +455,7 @@
                             <div class="form-group">
                                 <h3 class="form-title" id="hasil" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;"></h3>
                                 <h3 class="form-title" id="desc" style="font-size: 20px;margin-top: 5px;margin-bottom: 15px;"></h3>
-                                <input type="hidden" id="btnSave" class="form-submit" style="margin-top:unset;" value="Simpan" onclick="save();"/>
+                                <input type="hidden" id="btnSave" class="form-submit" style="margin-top:unset;" value="Buat Akun" onclick="save();"/>
                                 <a href="#test"><input type="hidden" id="kembali" class="form-submit" style="margin-top:unset;" value="Kembali" /></a>
                             </div>
                     </div>
