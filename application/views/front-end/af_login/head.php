@@ -28,7 +28,7 @@
   </head>
   <body>
     
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar  ftco-navbar-light"  id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="index.html" ><img style=" width:auto; height: 60px; " src="<?php echo base_url(); ?>assets/front-end/images/ebisu.png"></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,8 +38,22 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="<?php echo base_url(); ?>home" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="<?php echo base_url(); ?>home/kelas" class="nav-link">Kelas</a></li>
-            <li class="nav-item"><a href="<?php echo base_url(); ?>home/paket" class="nav-link">Paket</a></li>
+
+            <?php
+              if ($akses == "Member") {
+            ?>
+                <li class="nav-item"><a href="<?php echo base_url(); ?>home/kelas" class="nav-link">Kelas</a></li>
+                <li class="nav-item"><a href="<?php echo base_url(); ?>home/paket" class="nav-link">Paket</a></li>
+            <?php
+              }else {
+            ?>
+                <li class="nav-item"><a href="<?php echo base_url(); ?>home/kelas_p" class="nav-link">Kelas</a></li>
+            <?php
+              }
+            ?>
+            
+
+            
               <li class="nav-item"><a href="<?php echo base_url(); ?>home/profile" class="nav-link">Profile</a></li>
               <li class="nav-item cta"><a href="#" class="nav-link"><span>Haloo! <?php echo $nama; ?></span></a></li>
               <li class="nav-item cta"><a href="<?php echo base_url(); ?>home/logout" class="nav-link" style="background:red;border: unset;padding-left: 10px;padding-right: 10px;margin-left: 15px;"><span>Logout</span></a></li>

@@ -29,7 +29,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md">
+          <!-- <div class="col-md">
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Unseful Links</h2>
               <ul class="list-unstyled">
@@ -41,17 +41,15 @@
                 <li><a href="#" class="py-2 d-block">Policy</a></li>
               </ul>
             </div>
-          </div>
+          </div> -->
           <div class="col-md">
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Navigational</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Home</a></li>
-                <li><a href="#" class="py-2 d-block">Domain</a></li>
-                <li><a href="#" class="py-2 d-block">Hosting</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Blog</a></li>
-                <li><a href="#" class="py-2 d-block">Contact</a></li>
+                <li><a href="<?php echo base_url(); ?>home" class="nav-link">Home</a></li>
+                <li><a href="<?php echo base_url(); ?>home/paket" class="nav-link">Paket</a></li>
+                <li><a href="<?php echo base_url(); ?>home/about" class="nav-link">About</a></li>
+                <li><a href="<?php echo base_url(); ?>home/contact" class="nav-link">Contact</a></li>
               </ul>
             </div>
           </div>

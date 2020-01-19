@@ -17,7 +17,7 @@
                         Paket Aktif: <?php echo $nama_p ; ?>
                       </div>
                       <div class="form-group">
-                        Durasi: <?php echo $durasi ; ?>
+                        Durasi: <?php echo $durasi ; ?> Bulan
                       </div>
                       <div class="form-group">
                         Deskripsi: <?php echo $deskripsi ; ?>

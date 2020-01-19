@@ -23,11 +23,11 @@ class Changepass extends CI_Controller{
         if($this->session->userdata('logged_in')){
             $session_data = $this->session->userdata('logged_in');
             $data['email'] = $session_data['email'];
-            $data['golongan'] = $session_data['golongan'];
+            $data['akses'] = $session_data['akses'];
             $data['nama'] = $session_data['nama'];
             
             $this->load->view('head', $data);
-            $this->load->view('sidebar');
+            $this->load->view('menu');
             $this->load->view('changepass/index');
             $this->load->view('footer');
         }else{
@@ -40,13 +40,13 @@ class Changepass extends CI_Controller{
             $email = $this->input->post('email');
             $oldpass = $this->input->post('oldpass');
             $newpass = $this->input->post('newpass');
-            $data_old = $this->Mglobals->getAllQR("SELECT * FROM userconfig WHERE iduserconfig = '".$email."';");
-            $oldpassdb = $this->modul->dekrip_pass($data_old->pass);
+            $data_old = $this->Mglobals->getAllQR("SELECT * FROM userconfig WHERE email = '".$email."';");
+            $oldpassdb = $data_old->password;
             if($oldpass == $oldpassdb){
                 $data = array(
-                    'pass' => $this->modul->enkrip_pass($newpass)
+                    'password' => $newpass
                 );
-                $kondisi['iduserconfig'] = $email;
+                $kondisi['email'] = $email;
                 $update = $this->Mglobals->update("userconfig",$data, $kondisi);
                 if($update == 1){
                     $status = "Data tersimpan";

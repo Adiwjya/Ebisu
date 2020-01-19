@@ -102,6 +102,28 @@ class Home extends CI_Controller{
         }
     }
 
+    public function kelas_p(){
+        if($this->session->userdata('logged_in')){
+            $session_data = $this->session->userdata('logged_in');
+            $data['email'] = $session_data['email'];
+            $data['akses'] = $session_data['akses'];
+            $data['nama'] = $session_data['nama'];
+            $p_data = $this->Mglobals->getAllQR("select a.* from materi a join pengajar b on b.id_materi = a.id_materi where b.email = '".$data['email']."' and b.nama = '".$data['nama']."';");
+            $data['nama_p'] = $p_data -> nama;
+            $data['deskripsi'] = $p_data -> deskripsi;
+
+            $this->load->view('front-end/af_login/head', $data);
+            $this->load->view('front-end/kelas_p');
+            $this->load->view('front-end/isi_kelas');
+            $this->load->view('front-end/footer');
+        }else{
+            $data['paket'] = $this->Mglobals->getAllQR("select a.* from paket a join pelanggan b on b.jenis_paket = a.id_paket where b.email = '".$data['email']."' and b.nama = '".$data['nama']."';");
+            $this->load->view('front-end/head', $data);
+            $this->load->view('front-end/kelas');
+            $this->load->view('front-end/footer');
+        }
+    }
+
     public function contact(){
         if($this->session->userdata('logged_in')){
             $session_data = $this->session->userdata('logged_in');
@@ -138,6 +160,7 @@ class Home extends CI_Controller{
 
             $this->load->view('front-end/af_login/head', $data);
             $this->load->view('front-end/profile');
+            $this->load->view('front-end/profile_p');
             $this->load->view('front-end/footer');
         }else{
             $this->load->view('front-end/head');
@@ -155,7 +178,7 @@ class Home extends CI_Controller{
     }
 
     public function daftar_member(){
-        $data['paket'] = $this->Mglobals->getAllQR("select * from paket limit 3");
+        $data['paket'] = $this->Mglobals->getAll("paket");
         $this->load->view('front-end/daftar/member', $data);
     }
 

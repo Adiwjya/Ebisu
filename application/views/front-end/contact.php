@@ -18,13 +18,13 @@
           </div>
           <div class="w-100"></div>
           <div class="col-md-3">
-            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+            <p><span>Alamat:</span> Jalan ABCDDEF No 15, Surabaya</p>
           </div>
           <div class="col-md-3">
-            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+            <p><span>No Telepon:</span>+ +62 351 555 222</a></p>
           </div>
           <div class="col-md-3">
-            <p><span>Email:</span> <a href="mailto:info@ebisu.com">info@ebisu.com</a></p>
+            <p><span>Email:</span>ebisucs@gmail.com</a></p>
           </div>
           <div class="col-md-3">
             <p><span>Website</span> <a href="#">ebisu.com</a></p>

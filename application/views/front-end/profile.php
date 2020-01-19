@@ -5,7 +5,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-start">
           <div class="row" style="width: 100%;">
           <div class="col-md-6 ftco-animate text-center text-md-left mb-5">
-            <div class="profile-new">
+            <div class="profile-new" style="top: -11vw; width: 63vw;">
               <div class="container" style="margin: 20px;margin-left: 20px;margin-left: 6px; opacity: 1; margin-top: 30px;" >
                 <div class="row">
                   <div class="col-md-5">
@@ -43,45 +43,15 @@
       </div>
     </div>
 
-    <section class="ftco-section contact-section ftco-degree-bg">
+    <!-- <section class="ftco-section contact-section ftco-degree-bg">
       <div class="container">
         <div class="row d-flex mb-5 contact-info">
           <div class="col-md-12 mb-4">
             <h2 class="h4">Profile Anda</h2>
           </div>
           <div class="w-100"></div>
-          <!-- <video width="400" controls>
-            <source src="https://youtu.be/2iHoeHVmw0Q" type="video/mp4">
-            <source src="https://youtu.be/2iHoeHVmw0Q" type="video/ogg">
-            Your browser does not support HTML5 video.
-          </video> -->
           <iframe width="560" height="315" src="https://www.youtube.com/embed/2iHoeHVmw0Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel" style="float: right;">Edit Profile</h4>
-      </div>
-      <div class="modal-body">
-         <form>
-           Nama:<br>
-           <input type="text" name="nama">
-            <br>
-           Email:<br>
-           <input type="text" name="email">
-           <br>
-           Pesan Anda:<br>
-           <input type="text" name="pesan" style="height: 100px;">
-          </form> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary">Simpan</button>
-      </div>
-    </div>
-  </div>
-</div>
-    </section>
+    </section> -->

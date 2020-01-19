@@ -71,63 +71,34 @@
 	    				<table class="table">
 						    <thead class="thead-primary">
 						      <tr>
-						        <th>TLD</th>
-						        <th>Duration</th>
-						        <th>Registration</th>
-						        <th>Renewal</th>
-						        <th>Transfer</th>
-						        <th>Register</th>
+						        <th>Id Paket</th>
+						        <th>Nama</th>
+						        <th>Deskripsi</th>
+						        <th>Durasi</th>
+								<th>Harga</th>
+								<th>Aksi</th>
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr>
-						        <td class="color">.com</td>
-						        <td>1 Year</td>
-						        <td>$70.00</td>
-						        <td>$5.00</td>
-						        <td>$5.00</td>
+
+							<?php
+								foreach ($paket->result() as $row)
+								{
+							?>		
+								<tr>
+						        <td class="color"><?php echo $row->id_paket; ?></td>
+						        <td><?php echo $row->nama; ?></td>
+						        <td><?php echo $row->deskripsi; ?></td>
+						        <td><?php echo $row->durasi; ?> Bulan</td>
+						        <td><?php echo $row->harga; ?></td>
 						        <td><a href="#" class="btn btn-primary">Sign Up</a></td>
 						      </tr>
-						      <tr>
-						        <td class="color">.net</td>
-						        <td>1 Year</td>
-						        <td>$75.00</td>
-						        <td>$5.00</td>
-						        <td>$5.00</td>
-						        <td><a href="#" class="btn btn-primary">Sign Up</a></td>
-						      </tr>
-						      <tr>
-						        <td class="color">.org</td>
-						        <td>1 Year</td>
-						        <td>$65.00</td>
-						        <td>$5.00</td>
-						        <td>$5.00</td>
-						        <td><a href="#" class="btn btn-primary">Sign Up</a></td>
-						      </tr>
-						      <tr>
-						        <td class="color">.biz</td>
-						        <td>1 Year</td>
-						        <td>$60.00</td>
-						        <td>$5.00</td>
-						        <td>$5.00</td>
-						        <td><a href="#" class="btn btn-primary">Sign Up</a></td>
-						      </tr>
-						      <tr>
-						        <td class="color">.info</td>
-						        <td>1 Year</td>
-						        <td>$50.00</td>
-						        <td>$5.00</td>
-						        <td>$5.00</td>
-						        <td><a href="#" class="btn btn-primary">Sign Up</a></td>
-						      </tr>
-						      <tr>
-						        <td class="color">.me</td>
-						        <td>1 Year</td>
-						        <td>$45.00</td>
-						        <td>$5.00</td>
-						        <td>$5.00</td>
-						        <td><a href="#" class="btn btn-primary">Sign Up</a></td>
-						      </tr>
+
+							<?php
+								}
+							?>
+						      
+						      
 						    </tbody>
 						  </table>
 					  </div>
@@ -140,8 +111,8 @@
     	<div class="container">
     		<div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-4">Your Question</h2>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <h2 class="mb-4">Pertanyaan yang sering ditanyakan</h2>
+        
           </div>
         </div>
     		<div class="row">
@@ -151,33 +122,33 @@
     						<div class="col-md-6">
     							<div class="card">
 						        <div class="card-header">
-										  <a class="card-link" data-toggle="collapse"  href="#menuone" aria-expanded="true" aria-controls="menuone">What is your domain name? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
+										  <a class="card-link" data-toggle="collapse"  href="#menuone" aria-expanded="true" aria-controls="menuone">Apa itu Ebisu? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
 						        </div>
 						        <div id="menuone" class="collapse show">
 						          <div class="card-body">
-												<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+												<p>Ebisu merupakan website yang digunakan untuk mengajarkan UMKM kecil melalui sebuah video yang dibuatkan oleh pengajar yang telah memiliki UMKM yang berskala besar</p>
 						          </div>
 						        </div>
 						      </div>
 
 						      <div class="card">
 						        <div class="card-header">
-										  <a class="card-link" data-toggle="collapse"  href="#menutwo" aria-expanded="false" aria-controls="menutwo">How long is my domain name valid? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
+										  <a class="card-link" data-toggle="collapse"  href="#menutwo" aria-expanded="false" aria-controls="menutwo">Berapa lama paket saya berlaku? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
 						        </div>
 						        <div id="menutwo" class="collapse">
 						          <div class="card-body">
-												<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+												<p>durasi paket bisa diliat pada profil anda. untuk berapa lama paket anda berlaku tergantung dari pembelian berlangganan anda</p>
 						          </div>
 						        </div>
 						      </div>
 
 						      <div class="card">
 						        <div class="card-header">
-										  <a class="card-link" data-toggle="collapse"  href="#menu3" aria-expanded="false" aria-controls="menu3">Can I sell my domain name? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
+										  <a class="card-link" data-toggle="collapse"  href="#menu3" aria-expanded="false" aria-controls="menu3">Bisakah saya memindah tangankan akun saya? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
 						        </div>
 						        <div id="menu3" class="collapse">
 						          <div class="card-body">
-												<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+												<p>Untuk hal tersebut maaf akun tidak bisa dipindah tangankan karena sudah tercatat dengan nama anda di database kami</p>
 						          </div>
 						        </div>
 						      </div>
@@ -186,36 +157,36 @@
     						<div class="col-md-6">
     							<div class="card">
 						        <div class="card-header">
-										  <a class="card-link" data-toggle="collapse"  href="#menu4" aria-expanded="false" aria-controls="menu4">Can I cancel a domain? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
+										  <a class="card-link" data-toggle="collapse"  href="#menu4" aria-expanded="false" aria-controls="menu4">Bisakah Saya membatalkan paket saya? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
 						        </div>
 						        <div id="menu4" class="collapse">
 						          <div class="card-body">
-												<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+												<p>Silahkan kontak support kami untuk membatalkan paket berlangganan anda</p>
 						          </div>
 						        </div>
 						      </div>
 
 						      <div class="card">
 						        <div class="card-header">
-										  <a class="card-link" data-toggle="collapse"  href="#menu5" aria-expanded="false" aria-controls="menu5">How do I transfer a domain name? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
+										  <a class="card-link" data-toggle="collapse"  href="#menu5" aria-expanded="false" aria-controls="menu5">Bagaimana bila saya ingin mengganti paket berlangganan saya? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
 						        </div>
 						        <div id="menu5" class="collapse">
 						          <div class="card-body">
-												<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+												<p>Silahkan untuk mengkontak support kami.</p>
 						          </div>
 						        </div>
 						      </div>
 
-						      <div class="card">
+						      <!-- <div class="card">
 						        <div class="card-header">
-										  <a class="card-link" data-toggle="collapse"  href="#menu6" aria-expanded="false" aria-controls="menu6">How do I setup URL forwarding? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
+										  <a class="card-link" data-toggle="collapse"  href="#menu6" aria-expanded="false" aria-controls="menu6">Bagimana saya ? <span class="collapsed"><i class="ion-ios-arrow-up"></i></span><span class="expanded"><i class="ion-ios-arrow-down"></i></span></a>
 						        </div>
 						        <div id="menu6" class="collapse">
 						          <div class="card-body">
 										<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
 						          </div>
 						        </div>
-						      </div>
+						      </div> -->
     						</div>
     					</div>
 				    </div>
