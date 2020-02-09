@@ -58,6 +58,23 @@ class Home extends CI_Controller{
         }
     }
 
+    public function trial(){
+        if($this->session->userdata('logged_in')){
+            $session_data = $this->session->userdata('logged_in');
+            $data['email'] = $session_data['email'];
+            $data['akses'] = $session_data['akses'];
+            $data['nama'] = $session_data['nama'];
+
+            $this->load->view('front-end/af_login/head', $data);
+            $this->load->view('front-end/trial');
+            $this->load->view('front-end/footer');
+        }else{
+            $this->load->view('front-end/head');
+            $this->load->view('front-end/trial');
+            $this->load->view('front-end/footer');
+        }
+    }
+
     public function paket(){
         if($this->session->userdata('logged_in')){
             $session_data = $this->session->userdata('logged_in');
