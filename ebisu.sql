@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2020 at 05:29 PM
+-- Generation Time: Feb 11, 2020 at 06:36 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -66,9 +66,10 @@ CREATE TABLE `materi` (
 --
 
 INSERT INTO `materi` (`id_materi`, `nama`, `deskripsi`) VALUES
-('MTR001', 'TIK', 'Teknologi Informasi dan Komunikasi'),
-('MTR002', 'Analisis Bisnis', 'Analisa kebutuhan bisnis mendatang dengan menggunakan prasarana pendukung teknologi'),
-('MTR003', 'Tata Kelola Teknologi Informasi', 'Penataan dan perencanaan tata kelola sebuah teknologi untuk kepentingan bisnis dan lain-lain');
+('MTR001', 'Digital Marketing', 'Penggunaan E-Commerce untuk menigkatkan hasil produksi  dan memperluas jangkauan pasar'),
+('MTR002', 'IT Approach', 'Pengenalan Teknologi Informasi untuk mendukung kebutuhan bisnis '),
+('MTR003', ' IT Financial management', 'Penataan dan perencanaan tata kelola sebuah teknologi untuk kepentingan bisnis dan lain-lain'),
+('MTR004', 'Product Branding', 'Mengenalkan Label UMKM menggunakan Broadcasting');
 
 -- --------------------------------------------------------
 
@@ -84,6 +85,15 @@ CREATE TABLE `paket` (
   `harga` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `paket`
+--
+
+INSERT INTO `paket` (`id_paket`, `nama`, `deskripsi`, `durasi`, `harga`) VALUES
+('PKT001', 'PUBER 1', 'Paket Puas Belajar 1', 12, 2500000),
+('PKT002', 'PUBER 2', 'Paket Puas Belajar 2', 6, 1700000),
+('PKT003', 'PUBER 3', 'Paket Puas Belajar 3', 6, 700000);
+
 -- --------------------------------------------------------
 
 --
@@ -96,6 +106,20 @@ CREATE TABLE `paket_detail` (
   `id_pengajar` varchar(10) NOT NULL,
   `id_paket` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paket_detail`
+--
+
+INSERT INTO `paket_detail` (`id_paket_detail`, `id_materi`, `id_pengajar`, `id_paket`) VALUES
+('PKTD001', 'MTR001', 'PG0001', 'PKT001'),
+('PKTD002', 'MTR002', 'PG0001', 'PKT001'),
+('PKTD003', 'MTR003', 'PG0002', 'PKT001'),
+('PKTD004', 'MTR001', 'PG0001', 'PKT002'),
+('PKTD005', 'MTR002', 'PG0002', 'PKT002'),
+('PKTD006', 'MTR003', 'PG0003', 'PKT002'),
+('PKTD007', 'MTR001', 'PG0001', 'PKT003'),
+('PKTD008', 'MTR003', 'PG0003', 'PKT003');
 
 -- --------------------------------------------------------
 
@@ -120,8 +144,10 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama`, `email`, `alamat`, `tlp`, `username`, `password`, `jenis_bidang`, `jenis_paket`) VALUES
-('PL0001', 'user1', 'user1@gmail.com', 'test', 'test', 'user1@gmail.com', '123', '-', 'PKT001'),
-('PL0002', 'user2', 'user2@gmail.com', 'test', 'test', 'user2@gmail.com', '123', '-', 'PKT002');
+('PL0001', 'user1', 'user1@gmail.com', 'test', '081xxxxxxxxx', 'user1@gmail.com', '123', '-', 'PKT001'),
+('PL0002', 'user2', 'user2@gmail.com', 'test', '081xxxxxxxxx', 'user2@gmail.com', '123', '-', 'PKT002'),
+('PL0003', 'noel', 'Noel@gmail.com', 'Uwu', '123', 'Noel@gmail.com', '123', '-', 'PKT001'),
+('PL0004', '', '', '', '', '', '', '-', 'PKT001');
 
 -- --------------------------------------------------------
 
@@ -146,7 +172,9 @@ CREATE TABLE `pengajar` (
 
 INSERT INTO `pengajar` (`id_pengajar`, `nama`, `email`, `alamat`, `tlp`, `username`, `password`, `id_materi`) VALUES
 ('PG0001', 'Adi Wijaya', 'pengajar1@gmail.com', 'Test', '0000', 'pengajar1@gmail.com', '123', 'MTR001'),
-('PG0002', 'pengajar2', 'pengajar2@gmail.com', 'TEST`', 'TEST', 'pengajar2@gmail.com', '123', 'MTR002');
+('PG0002', 'pengajar2', 'pengajar2@gmail.com', 'TEST`', 'TEST', 'pengajar2@gmail.com', '123', 'MTR002'),
+('PG0003', 'pengajar3', 'p3@gmail.com', 'test', '0899999999', 'p3@gmail.com', '123', 'MTR002'),
+('PG0004', '', '', '', '', '', '', 'MTR004');
 
 -- --------------------------------------------------------
 
